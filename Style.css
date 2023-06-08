@@ -2,6 +2,7 @@ body {
 	height: 100%;
 	margin: 0;
 	position: relative;
+    font-family: 'Montserrat';
 }
 
 header{
@@ -30,12 +31,12 @@ nav>a {
 
 
 main {
-    padding-top: 100px;
     display: flex;
     flex-direction: column;
 }
 
 .home {
+    padding-top: 100px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -60,6 +61,8 @@ main {
 
 h3 {
     font-size: 200%;
+    text-align: center;
+    padding-top: 80px;
 }
 
 .projet-card {
@@ -81,3 +84,39 @@ h3 {
     color: black;
     text-align: center;
 }
+
+.technologies {
+    align-items: center;
+}
+
+
+
+.compétences {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.compétences>ul {
+    list-style: none;
+    font-size: 200%;
+}
+
+.compétences>ul>li {
+    padding: 10px;
+}
+
+.compétences:nth-child(2) div {
+    margin-top: 18px;
+}
+
+
+.notation {
+    padding-top: 21px;
+}
+
+i {
+    margin: 0 10px 0 10px;
+}
+
