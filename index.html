@@ -10,26 +10,69 @@
 </head>
 
 <body>
-    <header>
-        <nav>
-            <a href="#home" >Home</a>
-            <a href="#projet-section">Projet</a>
-            <a href="#technologies" >technologies</a>
-        </nav>
+    <header id="header">
+        
     </header>
 
     <main>
         <section id ="home" class="home">
             <h1>Titouan Descure</h1>
-            <h2>Étudiant en 1ère année de BUT info</h2>
+            <h2>Étudiant en 2ème année de BUT info</h2>
             <a href="https://github.com/tint0uin">
                 <img src="img/github.png" alt="github">
             </a>
+            
         </section>
 
         <section id="projet-section" class="projet-section">
             <h3>Mes projets</h3>
             <div class="projet-container">  
+
+                <div class="projet">
+                    <a href="game-jam.html">
+                        <div class="projet-card">
+                            <h4>GameJam</h4>
+                            <p>GameJam organisé par l'IUT</p>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="projet">
+                    <a href="drive.html">
+                        <div class="projet-card">
+                            <h4>Service de drive</h4>
+                            <p>Projet de service de cloud</p>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="projet">
+                    <a href="stage.html">
+                        <div class="projet-card">
+                            <h4>Stage</h4>
+                            <p>Stage dans l'entreprise Datamaran</p>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="projet">
+                    <a href="jeux.html">
+                        <div class="projet-card">
+                            <h4>projet de jeu ludo éducatif</h4>
+                            <p>Jeu ludo-éducatif sur l'histoire</p>
+                        </div>
+                    </a>
+                </div>
+                
+                <div class="projet">
+                    <a href="recherche-stage.html">
+                        <div class="projet-card">
+                            <h4>Application de recherche de stage</h4>
+                            <p>Application permettant la recherche de stage</p>
+                        </div>
+                    </a>
+                </div>
+
                 <div class="projet">
                     <a href="classification.html">
                         <div class="projet-card">
@@ -75,64 +118,34 @@
                         </div>
                     </a>
                 </div>
-            </div>
+
+
+
         </section> 
         
-        <section id="technologies">
-                <h3>Mes compétences</h3>
-                <div class="compétences">
-                    <ul>
-                        <li>Java</li>
-                        <li>HTML</li>
-                        <li>CSS</li>
-                        <li>SQL</li>
-                        <li>plpgsql</li>
-                    </ul>
-                    <div>
-                        <div class="notation">
-                            <i class="fa fa-circle" aria-hidden="true"></i>
-                            <i class="fa fa-circle" aria-hidden="true"></i>
-                            <i class="fa fa-circle" aria-hidden="true"></i>
-                            <i class="fa fa-circle" aria-hidden="true"></i>
-                            <i class="fa fa-circle-o" aria-hidden="true"></i>
-                        </div>
-                        <div class="notation">
-                            <i class="fa fa-circle" aria-hidden="true"></i>
-                            <i class="fa fa-circle" aria-hidden="true"></i>
-                            <i class="fa fa-circle" aria-hidden="true"></i>
-                            <i class="fa fa-circle" aria-hidden="true"></i>
-                            <i class="fa fa-circle-o" aria-hidden="true"></i>
-                        </div>
-                        <div class="notation">
-                            <i class="fa fa-circle" aria-hidden="true"></i>
-                            <i class="fa fa-circle" aria-hidden="true"></i>
-                            <i class="fa fa-circle" aria-hidden="true"></i>
-                            <i class="fa fa-circle" aria-hidden="true"></i>
-                            <i class="fa fa-circle-o" aria-hidden="true"></i>
-                        </div>
-                        <div class="notation">
-                            <i class="fa fa-circle" aria-hidden="true"></i>
-                            <i class="fa fa-circle" aria-hidden="true"></i>
-                            <i class="fa fa-circle" aria-hidden="true"></i>
-                            <i class="fa fa-circle-o" aria-hidden="true"></i>
-                            <i class="fa fa-circle-o" aria-hidden="true"></i>
-                        </div>
-                        <div class="notation">
-                            <i class="fa fa-circle" aria-hidden="true"></i>
-                            <i class="fa fa-circle" aria-hidden="true"></i>
-                            <i class="fa fa-circle" aria-hidden="true"></i>
-                            <i class="fa fa-circle-o" aria-hidden="true"></i>
-                            <i class="fa fa-circle-o" aria-hidden="true"></i>
-                        </div>
-                    </div>
-                </div>
-
-                
-        </section>
+      
     </main>
 
     <footer>
 
     </footer>
+    <script>
+        // Fonction pour injecter le contenu d'un fichier HTML
+        async function injectHTML() {
+            try {
+                // Récupérer le contenu du fichier content.html
+                const response = await fetch('header.html');
+                const html = await response.text();
+                
+                // Insérer le contenu dans l'élément avec l'id "content-placeholder"
+                document.getElementById('header').innerHTML = html;
+            } catch (error) {
+                console.error('Erreur lors de l\'injection du fichier HTML:', error);
+            }
+        }
+
+        // Appeler la fonction pour injecter le HTML après le chargement de la page
+        window.onload = injectHTML;
+    </script>
 
 </body>

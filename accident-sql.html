@@ -10,12 +10,7 @@
 
 
 <body>
-    <header>
-        <nav>
-            <a href="index.html#home" >Home</a>
-            <a href="index.html#projet-section">Projet</a>
-            <a href="index.html#technologie" >technologie</a>
-        </nav>
+    <header id="header">
     </header>
 
     <main>
@@ -29,3 +24,15 @@
 
     </main>
 </body>
+<script>
+    async function injectHTML() {
+        try {
+            const response = await fetch('header.html');
+            const html = await response.text();
+            document.getElementById('header').innerHTML = html;
+        } catch (error) {
+            console.error('Erreur lors de l\'injection du fichier HTML:', error);
+        }
+    }
+    window.onload = injectHTML;
+</script>

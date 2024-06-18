@@ -10,24 +10,36 @@
 
 
 <body>
-    <header>
-        <nav>
-            <a href="index.html#home" >Home</a>
-            <a href="index.html#projet-section">Projet</a>
-            <a href="index.html#technologie" >technologie</a>
-        </nav>
+    <header id="header">
     </header>
 
     <main>
         <div class="description">
             <h2>Projet java</h2>
             <p>projet développer en java en binôme. Nous devions classé des dépêches par catégorie, à l’aide de dictionnaire, un crée par nous, l'autre crée à l'aide d'un algorithme basé sur une base de dépècher. Dans le but d’utiliser les notions d’algorithmie acquis au cours de l’année.</p>
-            <div class="img-container">
-                <img src="img/javadépeche01.png" alt="javadépeche01">
-                <img src="img/javadépeche02.png" alt="javadépeche02">
-                <img src="img/javadépeche03.png" alt="javadépeche03">
+            <div class="carousel">
+                <button class="prev" onclick="showPrev()">&#10094;</button>
+                <div class="carousel-images">
+                    <img src="img/javadépeche01.png" alt="javadépeche01" class="carousel-image">
+                    <img src="img/javadépeche02.png" alt="javadépeche02" class="carousel-image">
+                    <img src="img/javadépeche03.png" alt="javadépeche03" class="carousel-image">
+                </div>
+                <button class="next" onclick="showNext()">&#10095;</button>
             </div>
         </div>
 
     </main>
 </body>
+<script src="script.js"></script>
+<script>
+    async function injectHTML() {
+        try {
+            const response = await fetch('header.html');
+            const html = await response.text();
+            document.getElementById('header').innerHTML = html;
+        } catch (error) {
+            console.error('Erreur lors de l\'injection du fichier HTML:', error);
+        }
+    }
+    window.onload = injectHTML;
+</script>
